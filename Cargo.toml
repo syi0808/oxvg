@@ -85,7 +85,7 @@ xml5ever = "0.38"
 
 # Developer dependencies
 ctor = "0.2"
-criterion = { version = "0.8", features = ["html_reports"] }
+criterion = { package = "codspeed-criterion-compat", version = "*" }
 env_logger = "0.11"
 insta = "1.42"
 pretty_assertions = "1.4"
