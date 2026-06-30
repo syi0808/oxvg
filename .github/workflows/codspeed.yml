@@ -31,9 +31,6 @@ jobs:
   benchmarks-napi:
     name: Run benchmarks
     runs-on: ubuntu-latest
-    permissions: # optional for public repositories
-      contents: read # required for actions/checkout
-      id-token: write # required for OIDC authentication with CodSpeed
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v6
