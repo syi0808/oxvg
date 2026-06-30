@@ -11,7 +11,7 @@ on:
 
 jobs:
   benchmarks-rust:
-    name: Run benchmarks
+    name: Run codspeed - Rust benches
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
@@ -21,6 +21,10 @@ jobs:
           channel: stable
           cache-target: release
           bins: cargo-codspeed
+      - name: Install Nushell
+        run: cargo install nu --locked
+      - name: Download benchmark SVG fixtures
+        run: nu crates/oxvg_optimiser/benches/download_svgs.nu
       - name: Build the benchmark target(s)
         run: cargo codspeed build
       - name: Run the benchmarks
@@ -28,8 +32,9 @@ jobs:
         with:
           mode: simulation
           run: cargo codspeed run
+
   benchmarks-napi:
-    name: Run benchmarks
+    name: Run codspeed - napi
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
