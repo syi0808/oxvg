@@ -1,9 +1,13 @@
 {
-  "extends": "@tsconfig/node12/tsconfig.json",
   "compilerOptions": {
-    "lib": ["es2023", "dom"],
-    "module": "nodenext"
-    "types": ["node"],
+    "lib": [
+      "es2023",
+      "dom"
+    ],
+    "module": "nodenext",
+    "types": [
+      "node"
+    ],
     "checkJs": true
   }
 }
