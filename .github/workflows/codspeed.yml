@@ -21,10 +21,8 @@ jobs:
           channel: stable
           cache-target: release
           bins: cargo-codspeed
-      - name: Install Nushell
-        run: cargo install nu --locked
       - name: Download benchmark SVG fixtures
-        run: nu crates/oxvg_optimiser/benches/download_svgs.nu
+        run: sh crates/oxvg_optimiser/benches/download_svgs.sh
       - name: Build the benchmark target(s)
         run: cargo codspeed build
       - name: Run the benchmarks
