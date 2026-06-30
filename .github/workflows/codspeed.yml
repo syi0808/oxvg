@@ -24,12 +24,12 @@ jobs:
       - name: Download benchmark SVG fixtures
         run: sh crates/oxvg_optimiser/benches/download_svgs.sh
       - name: Build the benchmark target(s)
-        run: cargo codspeed build
+        run: cargo codspeed build -p oxvg_optimiser
       - name: Run the benchmarks
         uses: CodSpeedHQ/action@v4
         with:
           mode: simulation
-          run: cargo codspeed run
+          run: cargo codspeed run -p oxvg_optimiser
 
   benchmarks-napi:
     name: Run codspeed - napi
