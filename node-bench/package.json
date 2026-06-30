@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "bench": "vitest bench"
+  },
+  "packageManager": "pnpm@10.5.2",
+  "devDependencies": {
+    "@codspeed/vitest-plugin": "^5.7.1",
+    "vitest": "^4.1.9"
+  },
+  "dependencies": {
+    "@oxvg/napi": "workspace:*"
+  }
+}
